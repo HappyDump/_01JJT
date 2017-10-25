@@ -6,7 +6,7 @@ pipeline {
     
   }
   stages {
-    stage('') {
+    stage('Init') {
       steps {
         echo 'Init start'
       }
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        junit '**-surefire-reports/**/*.xml'
+        junit '**/build/test-results/test/TEST-*.xml'
       }
     }
   }
