@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Mail') {
       steps {
-        mail(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $BUILD_URL to view the results.', from: 'mathieumetzger@gmail.com', replyTo: 'no-reply@gmail.com', to: 'mathieu.metzger@butema.fr', charset: 'UTF-8')
+        mail(subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', body: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:  Check console output at $RUN_DISPLAY_URL to view the results.', from: 'mathieumetzger@gmail.com', replyTo: 'no-reply@gmail.com', to: 'mathieu.metzger@butema.fr', charset: 'UTF-8')
       }
     }
   }
