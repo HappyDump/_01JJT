@@ -13,12 +13,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'mvn install -DrunSuite=**/CalculatorTestSuccessful.java'
+        sh 'mvn install -Dtest=*TestSuccessful.java -X'
       }
     }
     stage('test') {
       steps {
-        junit '**/build/test-results/test/TEST-*.xml'
+        junit '**/TEST-*.xml'
       }
     }
   }
