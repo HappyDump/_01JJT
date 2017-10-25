@@ -6,19 +6,19 @@ pipeline {
     
   }
   stages {
-    stage('') {
+    stage('Init') {
       steps {
         echo 'Init start'
       }
     }
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        sh 'mvn install -Dtest=*TestSuccessful.java -X'
       }
     }
     stage('test') {
       steps {
-        junit '**-surefire-reports/**/*.xml'
+        junit '**/TEST-*.xml'
       }
     }
   }
